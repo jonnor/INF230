@@ -1,0 +1,35 @@
+Logged into mysql:
+	mysql -u root -p
+
+Created University database:
+	CREATE DATABSE University;
+
+Opened University database:
+	USE University;
+
+Sourced provided sql file:
+	SOURCE university.sql;
+
+Identified primary keys of University database:
+	DESCRIBE Course;
+		primary key: crs_code
+	DESCRIBE Department;
+		primary key: dep_code
+	DESCRIBE Enrollment;
+		primary key: stu_id
+		primary key: sec_id
+	DESCRIBE Instructor;
+		primary key: ins_id
+	DESCRIBE Location;
+		primary key: loc_code
+	DESCRIBE Prerequisite;
+		primary key: crs_code
+		primary key: crs_requires
+	DESCRIBE Qualified;
+		primary key: ins_id
+		primary key: crs_code
+	DESCRIBE Section;
+		primary key: sec_id
+	DESCRIBE Student;
+		primary key: stu_id
+
