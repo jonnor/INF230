@@ -1,0 +1,15 @@
++----------------------+
+| Tables_in_University |
++----------------------+
+| Course               |
+| Department           |
+| Enrollment           |
+| Instructor           |
+| Location             |
+| Prerequisite         |
+| Qualified            |
+| Section              |
+| Student              |
++----------------------+
+9 rows in set (0,00 sec)
+
