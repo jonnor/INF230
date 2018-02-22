@@ -1,16 +1,73 @@
-Logged into mysql:
-	mysql -u root -p
+Mandatory exercise 1
 
-2.1 Created University database:
+PART 1
+
+1.1
+Assuming this is a user database.
+Items to store:
+	- Unique user identifier (phone number? ID number?)
+	- Name
+	- Date of birth
+	- Address
+	- ID number
+	- Phone number
+	- Contract number
+	- Voice call allowance
+	- Voice call minutes used
+	- Text messages
+	- Text messages sent
+	- Data
+	- Data used
+	- Cost
+	- Bank details (split?)
+
+1.2
+Split into tables:
+	Personal details:
+	- Unique user identifier (phone number? ID number?)
+	- Name
+	- Date of birth
+	- Address
+	- ID number
+	- Phone number
+	
+	Contract details:
+	- Contract number
+	- Phone number
+	- Voice call allowance
+	- Text messages allowance
+	- Data allowance
+	- Cost
+	- Bank details (split?)
+	- Address
+
+	Usage details:
+	- Voice call allowance
+	- Voice call minutes used
+	- Text messages allowance
+	- Text messages used
+	- Data allowance
+	- Data used
+1.3
+
+1.4
+
+
+PART 2
+
+2.1 
+Created University database:
 	CREATE DATABSE University;
 
-2.2 Opened University database:
+2.2 
+Opened University database:
 	USE University;
 
 Sourced provided sql file:
 	SOURCE university.sql;
 
-2.3 Identified primary keys of University database:
+2.3 
+Identified primary keys of University database:
 	DESCRIBE Course;
 		primary key: crs_code
 	DESCRIBE Department;
