@@ -33,31 +33,31 @@ VALUES (1, 'Hendriksen', 'Ola', 2, 1, 6),
    (5, 'Durden', 'Tyler', 2, 1, 6),
    (6, 'Larsen', 'Hanne', 4, 1, 1);
 
-INSERT INTO courses (courseID, coursename, location_locationcode, description) 
+INSERT INTO courses (courseID, coursename, description) 
 VALUES
-   (1, 'Artisan soap making 101', 2, 'Wash the pain away'),
-   (2, 'Advanced anger management', 3, ''),
-   (3, 'Artisan tea making', 2, ''),
-   (4, 'Spoon bending for beginners', 4, ''),
-   (5, 'Artisan soup making', 3, ''),
-   (6, 'Building better worlds', 3, ''),
-   (7, 'Alien ecology', 4, '');
+   (1, 'Artisan soap making 101', 'Wash the pain away'),
+   (2, 'Advanced anger management', ''),
+   (3, 'Artisan tea making', ''),
+   (4, 'Spoon bending for beginners', ''),
+   (5, 'Artisan soup making', ''),
+   (6, 'Building better worlds', ''),
+   (7, 'Alien ecology', '');
 
 
-INSERT INTO events (event, date, employees_eID, courses_courseID) 
+INSERT INTO events (event, date, employees_eID, courses_courseID, location_locationcode) 
 VALUES
-   (1, '2017-06-03', 3, 1),
-   (2, '2017-10-14', 5, 2),
-   (3, '2017-07-18', 3, 1),
-   (4, '2017-06-03', 4, 3),
-   (5, '2017-03-22', 1, 4),
-   (6, '2017-04-01', 1, 4),
-   (7, '2017-04-08', 1, 4),
-   (8, '2017-04-22', 1, 4),
-   (9, '2017-01-02', 2, 5),
-   (10, '2017-01-01', 6, 6),
-   (11, '2017-12-12', 6, 6),
-   (12, '2017-02-11', 4, 7);
+   (1, '2017-06-03', 3, 1, 2),
+   (2, '2017-10-14', 5, 2, 3),
+   (3, '2017-07-18', 3, 1, 2),
+   (4, '2017-06-03', 4, 3, 2),
+   (5, '2017-03-22', 1, 4, 4),
+   (6, '2017-04-01', 1, 4, 4),
+   (7, '2017-04-08', 1, 4, 4),
+   (8, '2017-04-22', 1, 4, 3),
+   (9, '2017-01-02', 2, 5, 3),
+   (10, '2017-01-01', 6, 6, 3),
+   (11, '2017-12-12', 6, 6, 3),
+   (12, '2017-02-11', 4, 7, 4);
    
 INSERT INTO course_attendance (events_event, employees_eID)
 VALUES
