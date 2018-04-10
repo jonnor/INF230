@@ -10,13 +10,13 @@ VALUES
    (6, 'Management'),
    (7, 'IT');
 
-INSERT INTO positions (positioncode, positionname, description, department_depnum) 
+INSERT INTO positions (positioncode, positionname, description) 
 VALUES
-   (1, 'President', 'Presides over minions', 6),
-   (2, 'Manager', 'Manages minions', 6),
-   (3, 'Professional', 'Nobody knows what they do', 3),
-   (4, 'Accountant', 'Counts minions', 1),
-   (5, 'Data Entry Specialist', 'The person doing all the work', 7);
+   (1, 'President', 'Presides over minions'),
+   (2, 'Manager', 'Manages minions'),
+   (3, 'Professional', 'Nobody knows what they do'),
+   (4, 'Accountant', 'Counts minions'),
+   (5, 'Data Entry Specialist', 'The person doing all the work');
 
 INSERT INTO locations (locationcode, locationname, address) 
 VALUES
@@ -25,13 +25,13 @@ VALUES
    (3, 'Petting zoo', '1 Highlands'),
    (4, 'IKEA', 'Industrial zone 14a1');
 
-INSERT INTO employees (eID, lname, fname, positions_positioncode, location_locationcode) 
-VALUES (1, 'Hendriksen', 'Ola', 2, 1),
-   (2, 'Beeblebrox', 'Zaphod', 1, 1),
-   (3, 'Anderson', 'Thomas', 5, 1),
-   (4, 'Reno', 'Leon', 3, 4),
-   (5, 'Durden', 'Tyler', 2, 1),
-   (6, 'Larsen', 'Hanne', 4, 1);
+INSERT INTO employees (eID, lname, fname, positions_positioncode, location_locationcode, departments_depnum) 
+VALUES (1, 'Hendriksen', 'Ola', 2, 1, 6),
+   (2, 'Beeblebrox', 'Zaphod', 1, 1, 6),
+   (3, 'Anderson', 'Thomas', 5, 1, 4),
+   (4, 'Reno', 'Leon', 3, 4, 5),
+   (5, 'Durden', 'Tyler', 2, 1, 6),
+   (6, 'Larsen', 'Hanne', 4, 1, 1);
 
 INSERT INTO courses (courseID, coursename, location_locationcode, description) 
 VALUES
@@ -44,23 +44,36 @@ VALUES
    (7, 'Alien ecology', 4, '');
 
 
-INSERT INTO historic (event, date, lecturer, employee_eID, courses_courseID, courses_coursename) 
+INSERT INTO events (event, date, employees_eID, courses_courseID) 
 VALUES
-   (1, 2017-06-03, 'Jon Nordby', 5, 1, 'Artisan soap making 101'),
-   (2, 2017-06-03, 'Jon Nordby', 1, 1, 'Artisan soap making 101'),
-   (3, 2017-06-03, 'Jon Nordby', 6, 1, 'Artisan soap making 101'),
-   (4, 2017-10-14, 5, 2, 'Advanced anger management'),
-   (5, 2017-10-14, 1, 2, 'Advanced anger management'),
-   (6, 2017-10-14, 6, 2, 'Advanced anger management'),
-   (7, 2017-07-18, 'Jon Nordby', 5, 1, 'Artisan soap making 101'),
-   (8, 2017-06-03, 2, 3, 'Artisan tea making 101'),
-   (9, 2017-06-03, 3, 3, 'Artisan tea making 101'),
-   (10, 2017-03-22, 2, 4, 'Spoon bending for beginners'),
-   (11, 2017-03-22, 3, 4, 'Spoon bending for beginners'),
-   (12, 2017-04-01, 3, 4, 'Spoon bending for beginners'),
-   (13, 2017-04-08, 3, 4, 'Spoon bending for beginners'),
-   (14, 2017-04-22, 3, 4, 'Spoon bending for beginners'),
-   (15, 2017-01-02, 1, 5, 'Artisan soup making 101');
-
-SELECT * FROM employees;
-
+   (1, '2017-06-03', 3, 1),
+   (2, '2017-10-14', 5, 2),
+   (3, '2017-07-18', 3, 1),
+   (4, '2017-06-03', 4, 3),
+   (5, '2017-03-22', 1, 4),
+   (6, '2017-04-01', 1, 4),
+   (7, '2017-04-08', 1, 4),
+   (8, '2017-04-22', 1, 4),
+   (9, '2017-01-02', 2, 5),
+   (10, '2017-01-01', 6, 6),
+   (11, '2017-12-12', 6, 6),
+   (12, '2017-02-11', 4, 7);
+   
+INSERT INTO course_attendance (events_event, employees_eID)
+VALUES
+	(1, 5),
+    (1, 1),
+    (1, 6),
+    (2, 5),
+    (2, 1),
+    (2, 6),
+    (3, 5),
+    (4, 2),
+    (4, 3),
+    (5, 2),
+    (5, 3),
+    (6, 3),
+    (7, 3),
+    (8, 3),
+    (9, 1);
+    
